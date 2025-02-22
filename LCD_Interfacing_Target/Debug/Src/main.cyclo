@@ -1,4 +1,6 @@
-../Src/main.c:32:5:main	1
-../Src/main.c:39:6:uart2_tx_init	1
-../Src/main.c:78:10:compute_USART_BRR	1
-../Src/main.c:86:6:uart2_write	2
+../Src/main.c:22:5:main	1
+../Src/main.c:29:6:GPIO_init	1
+../Src/main.c:41:6:LCD_Command	1
+../Src/main.c:60:6:LCD_data	1
+../Src/main.c:78:6:LCD_init	2
+../Src/main.c:98:6:delayMS	3
