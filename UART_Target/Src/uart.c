@@ -62,7 +62,7 @@ void uart2_write(int ch){
 		USART2->DR = (ch&0xFF);
 	}
 
-	// another way to check whether to send data to DR
+	// another way to check whether to send data to DataRegister
 	/* while(!(*USART_SR&0x0080)){}
 	 * this will ensure that data gets sent when DR is empty
 	 */
