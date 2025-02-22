@@ -34,7 +34,7 @@ void GPIO_init(void){
 	GPIOB->MODER |=0x5400; //01 - output mode for moder 5,6,7 moders as per data sheet
 	GPIOC->MODER |=0x00005555; //01 output mode for 0-7 moders (8-15 = 0)
 
-	//SET bit for EN and RW
+	//SET bit for EN and RW to low
 	GPIOB->BSRR = 0x00C; //13(bit 6 and 7)
 }
 
