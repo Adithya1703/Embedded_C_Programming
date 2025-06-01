@@ -4,7 +4,7 @@
 #define ECHO_FRONT 5
 
 // Relay
-#define Relay_Front 18
+#define Relay_Front 19
 
 
 void setup() {
@@ -65,3 +65,5 @@ void loop() {
   
   delay(200); // Small delay to avoid flooding
 }
+
+// Follow the same for both side sensors & relays
