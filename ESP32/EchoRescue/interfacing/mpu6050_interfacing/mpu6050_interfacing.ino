@@ -1,5 +1,27 @@
 #include <Wire.h>
 
+/*
+**Important Information**
+
+->register map values
+
+| register Value  | Meaning                       | Used For                     |
+|-----------------| ----------------------------- | ---------------------------- |
+|     `0x68`      | I2C Address of MPU6050        | To start communication       |
+|     `0x6B`      | Power Management Register     | To wake up the sensor        |
+|     `0x3B`      | Data Register Start (Accel X) | To begin reading sensor data |
+
+->pin layout
+
+| Pin Name | Use                                    |
+| -------- | ---------------------------------------|
+| VCC      | Power supply (3.3V not 5V)             |
+| GND      | Ground                                 |
+| SDA      | Data line to send/receive data(GPIO21) |
+| SCL      | Clock line for data timing(GPIO22)     |
+
+*/
+
 #define MPU_ADDR 0x68  // MPU6050 I2C address
 
 void setup() {
@@ -12,6 +34,10 @@ void setup() {
   // Wake up MPU6050
   Wire.beginTransmission(MPU_ADDR);
   Serial.print("Sending to register 0x6B (Power Management)... ");
+  /*
+  0x6B is the Power Management 1 register of MPU6050.
+  We tell it: “Hey, we want to write something into your power control register.”
+  */
   Wire.write(0x6B);
   Wire.write(0);  // Wake up command
   uint8_t status = Wire.endTransmission();
